@@ -47,7 +47,25 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+		</dependency>
 
+		<!--hystrix依赖（包含对Guava的依赖）-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			<version>1.4.4.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>guava</artifactId>
+					<groupId>com.google.guava</groupId>
+				</exclusion>
+
+			</exclusions>
+		</dependency>
 	</dependencies>
 
 	<build>
